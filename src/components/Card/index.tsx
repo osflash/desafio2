@@ -5,12 +5,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Card: React.FC = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div className="w-[449px] h-[222px] flex-none order-0 flex-grow-0 relative">
       <Image
-        src={!toggle ? "/Icon360.svg" : "/IconClose.svg"}
+        src={toggle ? "/Icon360.svg" : "/IconClose.svg"}
         alt="360"
         className="absolute top-2 right-[50px]"
         width={33}
@@ -23,7 +23,7 @@ const Card: React.FC = () => {
         }}
       />
       <Image
-        src={!toggle ? "/image.png" : "/image.gif"}
+        src={toggle ? "/image.png" : "/image.gif"}
         alt="Sofá"
         priority={false}
         width={449}
