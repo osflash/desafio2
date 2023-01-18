@@ -1,18 +1,18 @@
-import './globals.css'
+import "../styles/globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+import { crimsonPro, lato } from "~/utils/fonts";
+
+interface RottLayoutProps {
+  children: React.ReactNode;
+}
+
+const RootLayout: React.FC<RottLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="pt-br" className={`${lato.variable} ${crimsonPro.variable}`}>
       <head />
       <body>{children}</body>
     </html>
-  )
-}
+  );
+};
+
+export default RootLayout;
